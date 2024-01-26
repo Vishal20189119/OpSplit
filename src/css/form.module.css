@@ -1,0 +1,19 @@
+.formField{
+    display: flex;
+    margin-top: 22px;
+    margin-bottom: 20px;
+}
+
+.formField Input{
+    background-color: #faf3e8;
+    box-shadow: 2px 2px 5px 0.5px rgb(156, 91, 51);
+}
+
+.formField Button{
+    background-color: rgb(6, 213, 6);
+    box-shadow: 2px 2px 5px 0.5px green;
+}
+
+.formField Button:hover{
+    background-color: green;
+}

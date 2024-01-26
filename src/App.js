@@ -1,24 +1,26 @@
-import logo from './logo.svg';
-import './App.css';
+import {createBrowserRouter, RouterProvider} from 'react-router-dom';
+import styles from './App.module.css';
+import Home from './Home';
+import Transactions from './Transaction';
+import OptimalSplit from './OptimalSplit';
 
 function App() {
+  const router = createBrowserRouter([
+    {
+      path: '/', element: <Home/>,
+      errorElement: <h2>OOPS! error</h2>
+    },
+    {path: 'transaction', element: <Transactions/>},
+    {path: "opsplit", element: <OptimalSplit/>}
+  ])
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className={styles.App}>
+        <RouterProvider router={router}/>
+      </div>
+      {/* <div style={{textAlign: "center"}}>Note: Do not referesh to prevent data loss</div> */}
+    </>
   );
 }
 
